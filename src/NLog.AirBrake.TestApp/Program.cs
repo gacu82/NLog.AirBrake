@@ -18,9 +18,9 @@ namespace NLog.AirBrake.TestApp
       }
       catch (Exception ex)
       {
-        logger.InfoException("test", ex);
+        logger.Info(ex, "test");
         logger.Error(ex);
-        logger.ErrorException("this is a message", ex);
+        logger.Error(ex, "this is a message");
       }
 
       Console.WriteLine("Done.");

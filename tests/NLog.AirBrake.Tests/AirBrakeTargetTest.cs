@@ -26,7 +26,7 @@ namespace NLog.AirBrake.Tests
       AirBrakeTarget target = new AirBrakeTarget(client);
       NLog.Config.SimpleConfigurator.ConfigureForTargetLogging(target);
 
-      logger.InfoException("kaboom", ex);
+      logger.Info(ex, "kaboom");
       A.CallTo(() => client.Send(notice)).MustHaveHappened();
     }
 
