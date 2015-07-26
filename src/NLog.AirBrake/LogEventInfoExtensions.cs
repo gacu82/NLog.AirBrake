@@ -10,15 +10,12 @@ namespace NLog.AirBrake
         public static AirbrakeError ToAirBrakeError(this LogEventInfo logEvent)
         {
             var error = Activator.CreateInstance<AirbrakeError>();
+            // Airbrake requires that at least one line is present in the XML.
+            error.Backtrace = new AirbrakeTraceLine[1] { new AirbrakeTraceLine("none", 0) };
+
             if (logEvent.HasStackTrace)
             {
                 StackFrame[] frames = logEvent.StackTrace.GetFrames();
-
-                if (frames == null || frames.Length == 0)
-                {
-                    // Airbrake requires that at least one line is present in the XML.
-                    error.Backtrace = new AirbrakeTraceLine[1] { new AirbrakeTraceLine("none", 0) };
-                }
 
                 List<AirbrakeTraceLine> lines = new List<AirbrakeTraceLine>();
                 foreach (StackFrame frame in frames)

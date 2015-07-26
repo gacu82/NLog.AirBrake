@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.AirBrake", "NLog.AirBrake\NLog.AirBrake.csproj", "{2065F323-3AF7-4CA5-98A0-A4B7C060C3F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLog.AirBrake.TestApp", "NLog.AirBrake.TestApp\NLog.AirBrake.TestApp.csproj", "{216EF26A-9EEA-49FC-8D4B-F627DC4769E8}"
